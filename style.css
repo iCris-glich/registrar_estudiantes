@@ -1,5 +1,5 @@
 /* Estilos del cuerpo */
-body {
+.registro {
     background-image: url("https://lapatriaguate.edu.gt/wp-content/uploads/2023/03/oracion.jpg");
     background-size: cover;
     background-position: center;
@@ -11,6 +11,17 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-left: 50px;
 }
 
 /* Estilo del Footer */
@@ -46,4 +57,21 @@ input {
     border: 1px solid #ccc;
     margin-top: 10px;
     display: block;
+}
+
+/* diseño de botones */
+
+button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 15px;
+    height: 35px;
+    width: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+botton:hover {
+    background-color: #ccc;
+    color: #000;
 }

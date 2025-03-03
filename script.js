@@ -1,4 +1,4 @@
-let listaEstudiantes = [];
+let listaEstudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
 
 function generadorCodigo(min = 1, max = 99999) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -6,12 +6,12 @@ function generadorCodigo(min = 1, max = 99999) {
 
 function guardarUsuario(nombre, edad, grado) {
     if (edad < 0) {
-        console.error("La edad no puede ser un número negativo.");
+        alert("La edad no puede ser un número negativo.");
         return;
     }
 
     if (listaEstudiantes.some(estudiante => estudiante.nombre === nombre)) {
-        console.error("Este estudiante ya ha sido registrado.");
+        alert("Este estudiante ya ha sido registrado.");
         return;
     }
 
@@ -23,13 +23,17 @@ function guardarUsuario(nombre, edad, grado) {
     const estudiante = { nombre, edad, grado, codigo };
     listaEstudiantes.push(estudiante);
 
-    console.log("Estudiante guardado:", estudiante);
+    // Guardar la lista en localStorage
+    localStorage.setItem("estudiantes", JSON.stringify(listaEstudiantes));
+
     alert(`Has sido guardado con éxito: ${JSON.stringify(estudiante)}`);
+
+    window.location.href = 'home.html';
 }
 
 // Capturar datos del formulario
 document.getElementById("formularioEstudiante").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar que la página se recargue
+    event.preventDefault();
 
     const nombre = document.getElementById("nombre").value.trim();
     const edad = parseInt(document.getElementById("edad").value);

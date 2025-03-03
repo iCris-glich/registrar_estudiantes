@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estudiantes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lista de Estudiantes Registrados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Grado</th>
+                <th>Código</th>
+            </tr>
+        </thead>
+        <tbody id="tablaEstudiantes"></tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let listaEstudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
+            let tabla = document.getElementById("tablaEstudiantes");
+
+            listaEstudiantes.forEach(estudiante => {
+                let fila = document.createElement("tr");
+                fila.innerHTML = `
+                    <td>${estudiante.nombre}</td>
+                    <td>${estudiante.edad}</td>
+                    <td>${estudiante.grado}</td>
+                    <td>${estudiante.codigo}</td>
+                `;
+                tabla.appendChild(fila);
+            });
+        });
+    </script>
+</body>
+</html>
