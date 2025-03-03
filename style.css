@@ -1,16 +1,49 @@
-/* cuerpo de la pagina */
-
+/* Estilos del cuerpo */
 body {
-    background-color: #fff;
+    background-image: url("https://lapatriaguate.edu.gt/wp-content/uploads/2023/03/oracion.jpg");
+    background-size: cover;
+    background-position: center;
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-header{
-    background-color: #ccc;
-    color: #333;
+/* Estilo del Footer */
+footer {
+    width: 100%;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(170, 162, 162, 0.5);
+    padding: 10px 0;
 }
 
+
+/* Diseño del formulario */
+.formularioEstudiante {
+    background-color: rgba(235, 234, 234, 0.734);
+    padding: 25px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 25px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de los inputs */
+input {
+    background-color: #fff;
+    width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    display: block;
+}
